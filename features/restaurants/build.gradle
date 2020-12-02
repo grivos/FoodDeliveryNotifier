@@ -1,0 +1,37 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+    defaultConfig {
+        // Read the API key from ./secure.properties into R.string.maps_api_key
+        def secureProps = new Properties()
+        if (file("../../secure.properties").exists()) {
+            file("../../secure.properties")?.withInputStream { secureProps.load(it) }
+        }
+        resValue "string", "maps_api_key", (secureProps.getProperty("MAPS_API_KEY") ?: "")
+    }
+}
+
+dependencies {
+    implementation project(Modules.domain)
+    implementation project(Modules.presentation)
+    implementation project(Modules.wolt)
+    implementation Libraries.ktx
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxAndroid
+    implementation Libraries.rxRelay
+    implementation Libraries.rxBinding
+    implementation Libraries.koinViewModel
+    implementation Libraries.timber
+    implementation Libraries.coil
+    implementation Libraries.materialSearchView
+    implementation Libraries.googlePlaces
+    implementation Libraries.kotlinxCoroutinesAndroid
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.design
+    implementation SupportLibraries.constraintLayout
+    implementation SupportLibraries.swipeRefreshLayout
+}

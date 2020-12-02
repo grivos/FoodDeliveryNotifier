@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="monitoring_channel_name">ניתור זמינות</string>
+    <string name="monitoring_channel_description">ערוץ זה משמש עבור התראות של ניתור זמינות מסעדות</string>
+    <string name="restaurant_channel_name">מסעדה זמינה</string>
+    <string name="restaurant_channel_description">ערוץ זה משמש עבור התראות של מסעדות זמינות למשלוחים</string>
+    <string name="notification_title">מנתר זמינות</string>
+    <string name="notification_available_content_pattern">המשלוחים של \"%1$s\" חזרו לפעול</string>
+    <string name="notification_available_title">המשלוחים חזרו לפעילות!</string>
+</resources>

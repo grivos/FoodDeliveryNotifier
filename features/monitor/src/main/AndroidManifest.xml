@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.invariantlabs.fooddeliverynotifier.monitor">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <service android:name="com.invariantlabs.fooddeliverynotifier.presentation.MonitorService" />
+    </application>
+
+</manifest>

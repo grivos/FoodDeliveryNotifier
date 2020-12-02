@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Search</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_monitored">Monitored</string>
+    <string name="change_location">Change</string>
+    <string name="loading_restaurants_error">An error occurred</string>
+    <string name="try_again">Try again</string>
+    <string name="start_monitor">Monitor availability</string>
+    <string name="currently_monitored">Cancel Monitoring</string>
+    <string name="delivery_online">Delivery online</string>
+    <string name="delivery_offline_hours">Off delivery hours</string>
+    <string name="delivery_offline_temporarily">Delivery offline temporarily</string>
+    <string name="empty_favorites">No favorite restaurants selected.\nTap the search button to add a restaurant.</string>
+    <string name="empty_monitored">No monitored restaurants selected.</string>
+    <string name="currently_monitoring">Currently Monitoring</string>
+    <string name="toggle_favorite">Toggle favorite</string>
+    <string name="no_results_search">No results for search</string>
+</resources>

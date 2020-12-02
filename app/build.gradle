@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+if (file("../secure.properties").exists()) {
+    def secureProps = new Properties()
+    file("../secure.properties")?.withInputStream { secureProps.load(it) }
+    apply from: secureProps.getProperty("SIGNING") + ".gradle"
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        applicationId ApplicationId.id
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            versionNameSuffix " Debug"
+            debuggable true
+            minifyEnabled false
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+androidExtensions {
+    features = ["parcelize"]
+}
+
+dependencies {
+    implementation project(Modules.presentation)
+    implementation project(Modules.restaurants)
+    implementation project(Modules.monitor)
+    implementation project(Modules.network)
+    implementation project(Modules.wolt)
+    implementation project(Modules.domain)
+    implementation Libraries.kotlin
+    implementation SupportLibraries.design
+    implementation SupportLibraries.cardView
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.recyclerView
+    implementation SupportLibraries.navigationFragment
+    implementation SupportLibraries.navigationFragmentKtx
+    implementation SupportLibraries.navigationUiKtx
+    implementation Libraries.koinAndroid
+    implementation Libraries.lifecycleExtensions
+    implementation Libraries.rxjava
+    implementation Libraries.rxkotlin
+    implementation Libraries.loggingInterceptor
+    implementation Libraries.jodaTime
+    implementation Libraries.timber
+    implementation Libraries.viewPump
+    implementation Libraries.spanomatic
+    debugImplementation Libraries.leakCanaryAndroid
+}

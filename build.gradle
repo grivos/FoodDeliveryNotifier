@@ -1,0 +1,35 @@
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${Versions.gradle}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+        classpath "com.squareup.sqldelight:gradle-plugin:${Versions.sqlDelight}"
+        classpath "com.google.gms:google-services:${Versions.googleServices}"
+    }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.1.1"
+    id "com.github.ben-manes.versions" version "0.36.0"
+}
+
+allprojects {
+    apply from: "$rootDir/ktlint.gradle"
+    apply from: "$rootDir/detekt.gradle"
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task x(type: GradleBuild) { tasks = ["detekt", "ktlint", "lintDebug", "testDebugUnitTest"] }

@@ -1,0 +1,12 @@
+apply from: "$rootDir/common-android-library.gradle"
+
+dependencies {
+    implementation project(Modules.domain)
+    implementation project(Modules.wolt)
+    implementation Libraries.ktx
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxAndroid
+    implementation Libraries.koinViewModel
+    implementation Libraries.timber
+    implementation Libraries.kotlinxCoroutinesAndroid
+}

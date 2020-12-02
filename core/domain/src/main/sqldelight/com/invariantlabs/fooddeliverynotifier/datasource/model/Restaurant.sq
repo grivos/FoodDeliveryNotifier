@@ -1,0 +1,27 @@
+CREATE TABLE restaurantDao (
+  slug TEXT NOT NULL UNIQUE PRIMARY KEY,
+  favorite_timestamp INTEGER DEFAULT NULL,
+  monitored_timestamp INTEGER DEFAULT NULL
+);
+
+insertOrUpdate:
+INSERT OR REPLACE INTO restaurantDao (slug, favorite_timestamp, monitored_timestamp)
+VALUES (?, ?, ?);
+
+selectBySlug:
+SELECT * FROM restaurantDao WHERE slug = ?;
+
+selectAll:
+SELECT * FROM restaurantDao;
+
+selectAllFavorites:
+SELECT * FROM restaurantDao WHERE favorite_timestamp IS NOT NULL ORDER BY favorite_timestamp DESC;
+
+selectAllMonitored:
+SELECT * FROM restaurantDao WHERE monitored_timestamp IS NOT NULL ORDER BY monitored_timestamp DESC;
+
+
+deleteBySlug:
+DELETE
+FROM restaurantDao
+WHERE slug = ?;

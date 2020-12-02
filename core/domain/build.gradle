@@ -1,0 +1,36 @@
+plugins {
+    id "com.google.protobuf" version "0.8.14"
+}
+apply from: "$rootDir/common-android-library.gradle"
+
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${Versions.protoBuf}"
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation Libraries.timber
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxRelay
+    implementation Libraries.sqlDelight
+    implementation Libraries.sqlDelightRxJava
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinViewModel
+    implementation Libraries.datastore
+    implementation Libraries.protoBuf
+    implementation Libraries.kotlinxCoroutinesAndroid
+}
+
+apply plugin: 'com.squareup.sqldelight'

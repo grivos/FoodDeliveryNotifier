@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_address_lat" translatable="false">32.085142551789254</string>
+    <string name="default_address_lng" translatable="false">34.78195410221815</string>
+</resources>

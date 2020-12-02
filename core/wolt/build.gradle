@@ -1,0 +1,24 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation project(Modules.domain)
+    implementation Libraries.timber
+    implementation Libraries.rxkotlin
+    implementation Libraries.retrofit
+    implementation Libraries.loggingInterceptor
+    implementation Libraries.moshi
+    implementation Libraries.jodaTime
+    implementation Libraries.reactiveStreams
+    implementation Libraries.lifecycleProcess
+    kapt Libraries.moshiCodeGen
+    implementation Libraries.retrofitMoshiConverter
+    implementation Libraries.retrofitRxjava2Adapter
+    implementation Libraries.rxRelay
+    implementation Libraries.sqlDelight
+    implementation Libraries.sqlDelightRxJava
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinViewModel
+}
+
+apply plugin: 'com.squareup.sqldelight'

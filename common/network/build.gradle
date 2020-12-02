@@ -1,0 +1,14 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation Libraries.loggingInterceptor
+    implementation Libraries.moshi
+    kapt Libraries.moshiCodeGen
+    implementation Libraries.okhttp
+    implementation Libraries.retrofit
+    implementation Libraries.retrofitMoshiConverter
+    implementation Libraries.retrofitRxjava2Adapter
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinViewModel
+}

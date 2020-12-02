@@ -1,0 +1,24 @@
+apply from: "$rootDir/common-android-library.gradle"
+apply plugin: 'kotlin-kapt'
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation SupportLibraries.design
+    implementation Libraries.lifecycleExtensions
+    implementation Libraries.viewPump
+    implementation Libraries.spanomatic
+    kapt Libraries.lifecycleCompiler
+    implementation Libraries.lifecycleRuntime
+    implementation Libraries.lifecycleCommonJava8
+    implementation Libraries.lifecycleViewModelKtx
+    implementation Libraries.lifecycleLiveDataKtx
+    implementation Libraries.rxjava
+    implementation Libraries.rxAndroid
+    implementation Libraries.rxkotlin
+    implementation Libraries.timber
+}

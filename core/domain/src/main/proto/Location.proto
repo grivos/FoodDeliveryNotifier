@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+//define the package where User will be located after being generated
+option java_package = "com.invariantlabs.fooddeliverynotifier.domain.model";
+option java_multiple_files = true;
+
+message StoredLocationDao {
+  string address = 1;
+  double lat = 2;
+  double lng = 3;
+}

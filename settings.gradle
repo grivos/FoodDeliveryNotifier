@@ -1,0 +1,7 @@
+include ':app'
+include ':core:wolt'
+include ':core:domain'
+include ':common:presentation'
+include ':common:network'
+include ':features:restaurants'
+include ':features:monitor'

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="monitoring_channel_name">Availability Monitoring</string>
+    <string name="monitoring_channel_description">This channel is used for restaurants availability monitoring</string>
+    <string name="restaurant_channel_name">Delivery Online</string>
+    <string name="restaurant_channel_description">This channel is used for notifying when a restaurant\'s delivery is back online</string>
+    <string name="notification_title">Monitoring availability</string>
+    <string name="notification_available_content_pattern">Delivery for \"%1$s\" is back</string>
+    <string name="notification_available_title">Delivery is online!</string>
+</resources>
