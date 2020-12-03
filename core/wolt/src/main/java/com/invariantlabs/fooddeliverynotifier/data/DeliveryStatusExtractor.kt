@@ -11,13 +11,13 @@ class DeliveryStatusExtractor(private val dto: WoltRestaurantDto) {
     fun extractStatus(): DeliveryStatus {
         val now = DateTime.now()
         val days = listOf(
-            dto.openingTimes.monday,
-            dto.openingTimes.tuesday,
-            dto.openingTimes.wednesday,
-            dto.openingTimes.thursday,
-            dto.openingTimes.friday,
-            dto.openingTimes.saturday,
-            dto.openingTimes.sunday,
+            dto.deliverySpecs.deliveryTimes.monday,
+            dto.deliverySpecs.deliveryTimes.tuesday,
+            dto.deliverySpecs.deliveryTimes.wednesday,
+            dto.deliverySpecs.deliveryTimes.thursday,
+            dto.deliverySpecs.deliveryTimes.friday,
+            dto.deliverySpecs.deliveryTimes.saturday,
+            dto.deliverySpecs.deliveryTimes.sunday,
         )
         val todayIndex = now.dayOfWeek().get() - 1
         val todayOpenHours = days[todayIndex]

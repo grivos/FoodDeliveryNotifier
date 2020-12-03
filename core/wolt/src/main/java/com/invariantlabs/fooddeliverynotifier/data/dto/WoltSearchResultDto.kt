@@ -25,8 +25,13 @@ data class WoltRestaurantDto(
     @Json(name = "online") val online: Boolean,
     @Json(name = "alive") val alive: Int,
     @Json(name = "slug") val slug: String,
-    @Json(name = "opening_times") val openingTimes: WoltOpeningTimesWrapperDto,
+    @Json(name = "delivery_specs") val deliverySpecs: WoltDeliverySpecsDto,
     @Json(name = "public_url") val publicUrl: String,
+)
+
+@JsonClass(generateAdapter = true)
+data class WoltDeliverySpecsDto(
+    @Json(name = "delivery_times") val deliveryTimes: WoltOpeningTimesWrapperDto,
 )
 
 @JsonClass(generateAdapter = true)
